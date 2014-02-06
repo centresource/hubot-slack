@@ -88,6 +88,7 @@ class Slack extends Adapter
       name  : process.env.HUBOT_SLACK_BOTNAME or 'slackbot'
       mode  : process.env.HUBOT_SLACK_CHANNELMODE or 'blacklist'
       channels: process.env.HUBOT_SLACK_CHANNELS?.split(',') or []
+      link_names: process.env.HUBOT_SLACK_LINK_NAMES or 0
 
   getMessageFromRequest: (req) ->
     # Parse the payload
@@ -158,7 +159,7 @@ class Slack extends Adapter
     headers =
       Host: host
 
-    path += "?token=#{@options.token}"
+    path += "?token=#{@options.token}&link_names=#{@options.link_names}"
 
     reqOptions =
       agent    : false
