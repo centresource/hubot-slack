@@ -18,6 +18,9 @@
     },
     {
       "name": "Patrick Connolly"
+    },
+    {
+      "name": "Chip Hayner"
     }
   ],
   "keywords": [
@@ -35,7 +38,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/tinyspeck/hubot-slack.git"
+    "url": "http://github.com/centresource/hubot-slack.git"
   },
   "bugs": {
     "url": "https://github.com/tinyspeck/hubot-slack/issues",
