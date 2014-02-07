@@ -1,4 +1,4 @@
-# cs-hubot-slack
+# hubot-slack
 
 This is a [Hubot](http://hubot.github.com/) adapter to use with [Slack](https://slack.com).
 
