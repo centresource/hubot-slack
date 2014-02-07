@@ -176,7 +176,8 @@ class Slack extends Adapter
       reqOptions.headers["Content-Length"] = body.length
 
     request = https.request reqOptions, (response) ->
-      @log path
+      self.logError regOptions
+      self.logError data
       data = ""
       response.on "data", (chunk) ->
         data += chunk
