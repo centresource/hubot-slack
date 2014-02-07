@@ -25,6 +25,7 @@ class Slack extends Adapter
         username : @robot.name
         channel  : user.reply_to
         text     : str
+        link_names : link_names
 
       @post "/services/hooks/hubot", args
 
@@ -171,6 +172,7 @@ class Slack extends Adapter
       headers  : headers
 
     @log "Slack adapter request options:", reqOptions
+    @log "Slack POST body:", body
 
     if method is "POST"
       body = new Buffer body
