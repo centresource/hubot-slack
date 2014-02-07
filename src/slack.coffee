@@ -88,8 +88,8 @@ class Slack extends Adapter
       team  : process.env.HUBOT_SLACK_TEAM
       name  : process.env.HUBOT_SLACK_BOTNAME or 'slackbot'
       mode  : process.env.HUBOT_SLACK_CHANNELMODE or 'blacklist'
-      link_names: process.env.HUBOT_SLACK_LINK_NAMES or 0
       channels: process.env.HUBOT_SLACK_CHANNELS?.split(',') or []
+      link_names: process.env.HUBOT_SLACK_LINK_NAMES or 0
 
 
   getMessageFromRequest: (req) ->
@@ -161,7 +161,7 @@ class Slack extends Adapter
     headers =
       Host: host
 
-    path += "?token=#{@options.token}&link_names=#{@options.link_names}"
+    path += "?token=#{@options.token}"
 
     reqOptions =
       agent    : false
@@ -170,9 +170,6 @@ class Slack extends Adapter
       path     : path
       method   : method
       headers  : headers
-
-    @log "Slack adapter request options:", reqOptions
-    @log "Slack POST body:", body
 
     if method is "POST"
       body = new Buffer body
