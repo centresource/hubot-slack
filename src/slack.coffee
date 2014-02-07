@@ -170,14 +170,14 @@ class Slack extends Adapter
       method   : method
       headers  : headers
 
+    @log "Slack adapter request options:", regOptions
+
     if method is "POST"
       body = new Buffer body
       reqOptions.headers["Content-Type"] = "application/x-www-form-urlencoded"
       reqOptions.headers["Content-Length"] = body.length
 
     request = https.request reqOptions, (response) ->
-      self.log regOptions
-      self.log data
       data = ""
       response.on "data", (chunk) ->
         data += chunk
