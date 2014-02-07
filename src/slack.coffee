@@ -170,7 +170,7 @@ class Slack extends Adapter
       method   : method
       headers  : headers
 
-    @log "Slack adapter request options:", regOptions
+    @log "Slack adapter request options:", reqOptions
 
     if method is "POST"
       body = new Buffer body
