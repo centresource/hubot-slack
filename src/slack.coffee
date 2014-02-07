@@ -25,7 +25,7 @@ class Slack extends Adapter
         username : @robot.name
         channel  : user.reply_to
         text     : str
-        link_names : link_names
+        link_names : @options.link_names
 
       @post "/services/hooks/hubot", args
 
